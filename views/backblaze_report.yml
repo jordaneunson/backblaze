@@ -1,9 +1,8 @@
-i18n_title: backblaze.listing.title
-
 row1:
+    backblaze_fda_permissions_issue: {  }
+    backblaze_bzversion: {  }
     backblaze_bzlicense: {  }
     backblaze_bzlicense_status: {  }
-    backblaze_bzversion: {  }
     backblaze_safety_frozen: {  }
-    backblaze_encrypted: {  }
-    backblaze_last_backup: { }
+    backblaze_lastbackupcompleted: {  }
+    backblaze_bztempfile_size: {  }

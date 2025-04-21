@@ -11,6 +11,8 @@ reports:
         view: backblaze_report
         i18n: backblaze.report.title
 widgets:
+    backblaze_fda_permissions_issue:
+        view: backblaze_fda_permissions_issue_widget
     backblaze_bzversion:
         view: backblaze_bzversion_widget
     backblaze_bzlicense:
@@ -19,7 +21,7 @@ widgets:
         view: backblaze_bzlicense_status_widget
     backblaze_safety_frozen:
         view: backblaze_safety_frozen_widget
-    backblaze_encrypted:
-        view: backblaze_encrypted_widget
-    backblaze_last_backup:
-        view: backblaze_last_backup_widget
+    backblaze_lastbackupcompleted:
+        view: backblaze_lastbackupcompleted_widget
+    backblaze_bztempfile_size:
+        view: backblaze_bztempfile_size_widget

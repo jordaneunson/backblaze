@@ -10,6 +10,7 @@ class Backblaze_model extends Eloquent
 
     protected $fillable = [
       'serial_number',
+      'fda_permissions_issue',
       'bzversion',
       'bzlogin',
       'bzlicense',
@@ -18,11 +19,11 @@ class Backblaze_model extends Eloquent
       'lastbackupcompleted',
       'remainingnumfilesforbackup',
       'remainingnumbytesforbackup',
-      'totnumbytesforbackup',
       'totnumfilesforbackup',
+      'totnumbytesforbackup',
       'encrypted',
       'online_hostname',
       'bztempfile_size',
-      'fda_permissions_issue',
+
     ];
 }

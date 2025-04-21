@@ -2,7 +2,7 @@ type: scrollbox
 widget_id: backblaze-bzlicense-scrollbox-widget
 api_url: /module/backblaze/get_list/bzlicense
 i18n_title: backblaze.widget.bzlicense_title
-icon: fa-key
+icon: fa-laptop
 listing_link: /show/listing/backblaze/backblaze
 search_key: label
 badge: count
