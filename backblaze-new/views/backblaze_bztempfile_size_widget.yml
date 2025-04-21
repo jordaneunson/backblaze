@@ -1,8 +1,0 @@
-type: scrollbox
-widget_id: backblaze-bztempfile_size-scrollbox-widget
-api_url: /module/backblaze/get_list/bztempfile_size
-i18n_title: backblaze.widget.bztempfile_size_title
-icon: fa-laptop
-listing_link: /show/listing/backblaze/backblaze
-search_key: label
-badge: count

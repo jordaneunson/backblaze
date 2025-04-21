@@ -1,8 +1,0 @@
-type: scrollbox
-widget_id: backblaze-lastbackupcompleted-scrollbox-widget
-api_url: /module/backblaze/get_list/lastbackupcompleted
-i18n_title: backblaze.widget.lastbackupcompleted_title
-icon: fa-laptop
-listing_link: /show/listing/backblaze/backblaze
-search_key: label
-badge: count

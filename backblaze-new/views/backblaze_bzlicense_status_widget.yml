@@ -1,8 +1,0 @@
-type: scrollbox
-widget_id: backblaze-bzlicense_status-scrollbox-widget
-api_url: /module/backblaze/get_list/bzlicense_status
-i18n_title: backblaze.widget.bzlicense_status_title
-icon: fa-laptop
-listing_link: /show/listing/backblaze/backblaze
-search_key: label
-badge: count

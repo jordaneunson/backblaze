@@ -1,8 +1,0 @@
-type: scrollbox
-widget_id: backblaze-bzversion-scrollbox-widget
-api_url: /module/backblaze/get_list/bzversion
-i18n_title: backblaze.widget.bzversion_title
-icon: fa-laptop
-listing_link: /show/listing/backblaze/backblaze
-search_key: label
-badge: count
