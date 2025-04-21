@@ -6,6 +6,9 @@ table:
         i18n_header: listing.computername
         formatter: clientDetail
         tab_link: backblaze
+    -   column: backblaze.fda_permissions_issue
+        i18n_header: backblaze.column.fda_permissions_issue
+        formatter: binaryYesNo
     -   column: reportdata.serial_number
         i18n_header: serial
     -   column: backblaze.bzversion

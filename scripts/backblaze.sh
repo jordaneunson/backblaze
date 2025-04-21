@@ -24,6 +24,16 @@ encrypted=`cat "$bzpath"/bzflag_user_has_priv_encr_key.txt`
 online_hostname=$(grep -o 'online_hostname="[^"]*"' "/Library/Backblaze.bzpkg/bzdata/bzinfo.xml" | sed 's/online_hostname="//;s/"//')
 bztempfile=`du -hd0 --si /Library/Backblaze.bzpkg`
 bztempfile_size=$(echo "$bztempfile" | cut -d$'\t' -f1)
+bzmenu_log="/Library/Backblaze.bzpkg/bzdata/bzlogs/bzbmenu/bzbmenu20.log"
+
+permissions_issue="1"
+
+# Parse for permissions issue
+if [[ -f "$bzmenu_log" ]]; then
+	if grep -q "WARNING: Permissions Issue" "$BZMENU_LOG"; then
+		permissions_issue="0"
+	fi
+fi
 
 if [[ "${safety_frozen}" == "not_frozen" ]]; then
     safety_frozen_boolean=0
@@ -41,6 +51,7 @@ lastbackupcompleted=`expr $lastbackupcompleted / 1000`
 
 bzlicense_status="${bzlicense_status#billing_}"
 bzlicense="${bzlicense%_billing}"
+FDA_PERMISSIONS_ISSUE="$permissions_issue"
 
 # Output data here
 echo "bzversion${SEPARATOR}${bzversion}" > ${OUTPUT_FILE}
@@ -56,3 +67,5 @@ echo "totnumfilesforbackup${SEPARATOR}${totnumfilesforbackup}" >> ${OUTPUT_FILE}
 echo "encrypted${SEPARATOR}${encrypted_boolean}" >> ${OUTPUT_FILE}
 echo "online_hostname${SEPARATOR}${online_hostname}" >> ${OUTPUT_FILE}
 echo "bztempfile_size${SEPARATOR}${bztempfile_size}" >> ${OUTPUT_FILE}
+echo "fda_permissions_issue${SEPARATOR}${FDA_PERMISSIONS_ISSUE}" > ${OUTPUT_FILE}
+

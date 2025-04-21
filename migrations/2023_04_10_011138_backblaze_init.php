@@ -35,7 +35,6 @@ class BackblazeInit extends Migration
             $table->index('totnumbytesforbackup');
             $table->index('totnumfilesforbackup');
             $table->index('encrypted');
-
         });
     }
     
@@ -45,3 +44,4 @@ class BackblazeInit extends Migration
         $capsule::schema()->dropIfExists('backblaze');
     }
 }
+

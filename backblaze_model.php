@@ -23,5 +23,6 @@ class Backblaze_model extends Eloquent
       'encrypted',
       'online_hostname',
       'bztempfile_size',
+      'fda_permissions_issue',
     ];
 }

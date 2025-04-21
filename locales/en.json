@@ -12,7 +12,8 @@
         "totnumfilesforbackup": "Total Files for Backup",
         "encrypted": "Encrypted",
         "online_hostname": "Backup Name",
-        "bztempfile_size": "Temp File"
+        "bztempfile_size": "Temp File",
+	"fda_permissions_issue": "Full Disk Access"
     },
     "listing": {
         "title": "Backblaze"
@@ -33,6 +34,7 @@
         "totnumbytesforbackup_title": "Total for Backup",
         "totnumfilesforbackup_title": "Total Files for Backup",
         "encrypted_title": "Encrypted",
-        "bztempfile_size": "Temp File"
+        "bztempfile_size": "Temp File",
+	"fda_permissions_issue": "Full Disk Access"
     }
 }
