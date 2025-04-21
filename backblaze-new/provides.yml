@@ -1,0 +1,27 @@
+client_tabs:
+    backblaze:
+        view: backblaze_tab
+        i18n: backblaze.title
+listings:
+    backblaze:
+        view: backblaze_listing
+        i18n: backblaze.listing.title
+reports:
+    backblaze:
+        view: backblaze_report
+        i18n: backblaze.report.title
+widgets:
+    backblaze_fda_permissions_issue:
+        view: backblaze_fda_permissions_issue_widget
+    backblaze_bzversion:
+        view: backblaze_bzversion_widget
+    backblaze_bzlicense:
+        view: backblaze_bzlicense_widget
+    backblaze_bzlicense_status:
+        view: backblaze_bzlicense_status_widget
+    backblaze_safety_frozen:
+        view: backblaze_safety_frozen_widget
+    backblaze_lastbackupcompleted:
+        view: backblaze_lastbackupcompleted_widget
+    backblaze_bztempfile_size:
+        view: backblaze_bztempfile_size_widget
