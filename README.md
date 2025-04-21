@@ -5,10 +5,10 @@ Gets data about the current Backblaze status.
 
 Installation
 ----
-cd to munkireport/local/modules
-git clone https://www.jordaneunson.com/backblaze
-cd to munkireport 
-./please migrate
+* cd to munkireport/local/modules
+* git clone https://www.jordaneunson.com/backblaze
+* cd to munkireport 
+* ./please migrate
 
 Table Schema
 ----
@@ -20,7 +20,7 @@ Table Schema
 * safety_frozen - boolean
 * lastbackupcompleted - string
 * remainingnumfilesforbackup - integer
-* remainingnumbytesforbackup - bigInteger 
+* remainingnumbytesforbackup - bigInteger al
 * totnumfilesforbackup - integer 
 * totnumbytesforbackup - bigInteger
 * encrypted - boolean
