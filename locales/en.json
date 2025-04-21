@@ -1,6 +1,6 @@
 {
     "column": {
-        "fda_permissions_issue": "Full Disk Access Issue",
+        "fda_permissions_issue": "Full Disk Access",
         "bzversion": "Version",
         "bzlogin": "Login",
         "bzlicense": "License",
@@ -9,8 +9,8 @@
         "lastbackupcompleted": "Last Backup Date",
         "remainingnumfilesforbackup": "Files Remaining",
         "remainingnumbytesforbackup": "Bytes Remaining",
-        "totnumfilesforbackup": "Total Files Backed Up",
-        "totnumbytesforbackup": "Total Bytes Backed Up",
+        "totnumfilesforbackup": "Total Files",
+        "totnumbytesforbackup": "Total GB",
         "encrypted": "Encrypted",
         "online_hostname": "Hostname",
         "bztempfile_size": "Temp File Size"

@@ -6,7 +6,7 @@ table:
         tab_link: backblaze
     -   column: reportdata.serial_number
         i18n_header: serial
-    -   column: backblaze.fda_permissions_issue
+    -   column: backblaze.fda_permissions
         i18n_header: backblaze.column.fda_permissions_issue
         formatter: binaryYesNo
     -   column: backblaze.bzversion
