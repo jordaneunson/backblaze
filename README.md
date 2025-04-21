@@ -5,14 +5,17 @@ Gets data about the current Backblaze status.
 
 Table Schema
 ----
-* bzversion - VARCHAR(255) - Backblaze Version
-* bzlogin - VARCHAR(255)
-* bzlicense - VARCHAR(255) 
-* bzlicense_status - VARCHAR(255)
+* fda_permissions_issue - boolean
+* bzversion - string 
+* bzlogin - string
+* bzlicense - string
+* bzlicense_status - string
 * safety_frozen - BOOLEAN
-* lastbackupcompleted - bigInt
-* remainingnumfilesforbackup - bigInt
-* remainingnumbytesforbackup - bigInt 
-* totnumfilesforbackup - bigInt 
-* totnumbytesforbackup - bigInt 
+* lastbackupcompleted - string
+* remainingnumfilesforbackup - integer
+* remainingnumbytesforbackup - bigInteger 
+* totnumfilesforbackup - integer 
+* totnumbytesforbackup - bigInteger
 * encrypted - BOOLEAN
+* online_hostname - string
+* bztempfile_size - string
