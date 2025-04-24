@@ -33,7 +33,7 @@ fi
 remainingnumfilesforbackup=$(grep -o 'remainingnumfilesforbackup="[^"]*"' "$bzpath"/bzstat_remainingbackup.xml | sed 's/remainingnumfilesforbackup="//;s/"//')
 remainingnumbytesforbackup=$(grep -o 'remainingnumbytesforbackup="[^"]*"' "$bzpath"/bzstat_remainingbackup.xml | sed 's/remainingnumbytesforbackup="//;s/"//')
 totnumfilesforbackup=$(grep -o 'totnumfilesforbackup="[^"]*"' "$bzpath"/bzstat_totalbackup.xml | sed 's/totnumfilesforbackup="//;s/"//')
-totnumbytesforbackup=$(grep -o 'totnumbytesforbackup="[^"]*"' "$bzpath"/bzstat_totalbackup.xml | sed 's/totnumbytesforbackup="//;s/"//')
+totnumbytesforbackup_raw=$(grep -o 'totnumbytesforbackup="[^"]*"' "$bzpath"/bzstat_totalbackup.xml | sed 's/totnumbytesforbackup="//;s/"//')
 totnumbytesforbackup=$(awk "BEGIN { printf \"%.2f GB\", $totnumbytesforbackup_raw / (1024^3) }")
 online_hostname=$(grep -o 'online_hostname="[^"]*"' "/Library/Backblaze.bzpkg/bzdata/bzinfo.xml" | sed 's/online_hostname="//;s/"//')
 
@@ -43,6 +43,7 @@ bztempfile_size=$(echo "$bztempfile" | cut -f1)
 
 # === FDA Permissions Check ===
 # this is not a good way of doing this. Need to refine this, maybe there's a database locally we can consult.
+# here's an idea, we tail -f bzbmenu21.log and see if those lines come up about Warning: blah blah blah, but 21 seems so arbitrary. Whats with that? 
 if [[ $(sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" \
   "SELECT auth_value FROM access WHERE service='kTCCServiceSystemPolicyAllFiles' AND client LIKE '%backblaze%';") == 2 ]]; then
     permissions_issue=0
