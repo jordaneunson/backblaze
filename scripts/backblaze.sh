@@ -8,7 +8,11 @@ SEPARATOR=' = '
 bzpath="/Library/Backblaze.bzpkg/bzdata/bzreports"
 
 # === Core Data ===
-bzversion=$(cat "$bzpath"/bzserv_version.txt 2>/dev/null) || exit 0
+bzversion=$(cat "$bzpath"/bzserv_version.txt 2>/dev/null)
+if [[ -z "$bzversion" ]]; then
+rm -f "$OUTPUT_FILE"
+exit 0
+fi
 bzlogin=$(grep -o 'bzlogin="[^"]*"' "$bzpath"/bzdc_synchostinfo.xml | sed 's/bzlogin="//;s/"//')
 bzlicense=$(grep -o 'bzlicense="[^"]*"' "$bzpath"/bzdc_synchostinfo.xml | sed 's/bzlicense="//;s/"//')
 bzlicense_status=$(grep -o 'bzlicense_status="[^"]*"' "$bzpath"/bzdc_synchostinfo.xml | sed 's/bzlicense_status="//;s/"//')
@@ -42,13 +46,12 @@ bztempfile=$(du -hd0 --si /Library/Backblaze.bzpkg 2>/dev/null)
 bztempfile_size=$(echo "$bztempfile" | cut -f1)
 
 # === FDA Permissions Check ===
-# this is not a good way of doing this. Need to refine this, maybe there's a database locally we can consult.
-# here's an idea, we tail -f bzbmenu21.log and see if those lines come up about Warning: blah blah blah, but 21 seems so arbitrary. Whats with that? 
-if [[ $(sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" \
-  "SELECT auth_value FROM access WHERE service='kTCCServiceSystemPolicyAllFiles' AND client LIKE '%backblaze%';") == 2 ]]; then
+# Test FDA by attempting to list a TCC-protected path.
+# The TCC.db itself is SIP-protected and unreadable even as root.
+if ls "/Library/Application Support/com.apple.TCC/" >/dev/null 2>&1; then
     permissions_issue=0
 else
-	permissions_issue=1
+    permissions_issue=1
 fi
 
 FDA_PERMISSIONS_ISSUE="$permissions_issue"
